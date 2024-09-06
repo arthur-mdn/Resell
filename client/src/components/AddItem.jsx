@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import config from "../config";
 
@@ -17,7 +17,6 @@ function AddItem() {
     const [conditions, setConditions] = useState([]);
     const [sizes, setSizes] = useState([]);
 
-    // Fetch categories, brands, conditions, and sizes (You can adjust these API endpoints)
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -26,7 +25,6 @@ function AddItem() {
                 const conditionsResponse = await axios.get(`${config.serverUrl}/items/conditions`, {withCredentials: true});
 
                 setCategories(categoriesResponse.data);
-                console.log(categoriesResponse.data);
                 setBrands(brandsResponse.data);
                 setConditions(conditionsResponse.data);
             } catch (error) {
@@ -41,9 +39,7 @@ function AddItem() {
             ...itemData,
             [e.target.name]: e.target.value,
         });
-        console.log(e.target.name);
         if (e.target.name === "category") {
-            //reload sizes
             const sizesResponse = await axios.get(`${config.serverUrl}/items/sizes/${e.target.value}`, {withCredentials: true});
             setSizes(sizesResponse.data);
         }

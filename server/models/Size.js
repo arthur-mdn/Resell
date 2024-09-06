@@ -8,7 +8,7 @@ const sizeSchema = new Schema({
         ref: 'Category',
         required: true
     },
-    sort: { // pour trier les tailles dans l'ordre
+    sort: { // Used to order sizes in the UI
         type: Number,
         required: true,
         default: 0

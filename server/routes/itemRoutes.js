@@ -1,16 +1,12 @@
-const User = require("../models/User");
 const Category = require("../models/Category");
 const Brand = require("../models/Brand");
 const Condition = require("../models/Condition");
 const Size = require("../models/Size");
 const Item = require("../models/Item");
 
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 const verifyToken = require('../others/verifyToken');
 const express = require("express");
 const router = express.Router();
-const config = require('../others/config');
 
 router.get('/items', verifyToken, async (req, res) => {
     try {

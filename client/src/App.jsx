@@ -1,6 +1,4 @@
 // App.jsx
-import React, {useEffect} from 'react';
-import config from './config';
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import {ToastContainer} from 'react-toastify';

@@ -1,11 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {useNavigate} from "react-router-dom";
-import {useCookies} from "react-cookie";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import config from "../config";
 
 function Accueil() {
-    const navigate = useNavigate();
     const [items, setItems] = useState([]);
 
     useEffect(() => {
