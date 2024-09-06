@@ -1,5 +1,6 @@
 // models/Condition.js
 const mongoose = require('mongoose');
+const Image = require("./Image");
 const { Schema } = mongoose;
 
 const conditionSchema = new Schema({
@@ -14,12 +15,26 @@ const conditionSchema = new Schema({
     image: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image',
-        required: true,
-        default: {
-            type: 'image',
-            value: 'conditions/default-condition.svg'
+        required: false
+    }
+});
+
+conditionSchema.pre('save', async function (next) {
+    if (!this.image) {
+        const defaultImage = await Image.findOne({ system: 'default-condition' });
+        if (defaultImage) {
+            this.image = defaultImage._id;
+        } else {
+            const newImage = new Image({
+                type: 'image',
+                value: 'conditions/default-condition.svg',
+                system: 'default-condition'
+            });
+            await newImage.save();
+            this.image = newImage._id;
         }
     }
+    next();
 });
 
 module.exports = mongoose.model('Condition', conditionSchema);

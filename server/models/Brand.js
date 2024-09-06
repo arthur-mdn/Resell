@@ -1,5 +1,6 @@
 // models/Brand.js
 const mongoose = require('mongoose');
+const Image = require("./Image");
 const { Schema } = mongoose;
 
 const brandSchema = new Schema({
@@ -16,12 +17,26 @@ const brandSchema = new Schema({
     image: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image',
-        required: true,
-        default: {
-            type: 'image',
-            value: 'brands/default-brand.svg'
+        required: false
+    }
+});
+
+brandSchema.pre('save', async function (next) {
+    if (!this.image) {
+        const defaultImage = await Image.findOne({ system: 'default-brand' });
+        if (defaultImage) {
+            this.image = defaultImage._id;
+        } else {
+            const newImage = new Image({
+                type: 'image',
+                value: 'brands/default-brand.svg',
+                system: 'default-brand'
+            });
+            await newImage.save();
+            this.image = newImage._id;
         }
     }
+    next();
 });
 
 module.exports = mongoose.model('Brand', brandSchema);

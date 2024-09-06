@@ -39,8 +39,7 @@ const itemSchema = new Schema({
     photos: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image',
-        required: false,
-        default: []
+        required: false
     }],
     creation: {
         type: Date,

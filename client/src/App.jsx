@@ -13,6 +13,7 @@ import Loading from "./components/Loading.jsx";
 import Register from "./pages/Register.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Profil from "./pages/Profil.jsx";
+import AddItem from "./components/AddItem.jsx";
 
 const AuthenticatedApp = () => {
     const {authStatus} = useAuth();
@@ -38,6 +39,7 @@ const AuthenticatedApp = () => {
                                 <>
                                     {/* Routes privées */}
                                     <Route path="/" element={<Accueil/>}/>
+                                    <Route path="/items/add" element={<AddItem/>}/>
                                     <Route path="/profil" element={<Profil/>}/>
                                     <Route path="/logout" element={<Logout/>}/>
                                 </>

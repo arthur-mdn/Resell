@@ -9,6 +9,7 @@ const {verify} = require("jsonwebtoken");
 
 
 const authRoutes = require('./routes/authRoutes');
+const itemRoutes = require('./routes/itemRoutes');
 const config = require('./others/config');
 const database = require('./others/database');
 const verifyToken = require("./others/verifyToken");
@@ -39,6 +40,7 @@ app.use(cookieParser({
 database.connect();
 
 app.use(authRoutes);
+app.use(itemRoutes);
 app.use('/uploads', express.static('uploads'));
 app.use('/public', express.static('public'));
 

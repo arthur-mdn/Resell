@@ -23,7 +23,7 @@ router.post('/auth/login', async (req, res) => {
         await user.save();
 
         const token = jwt.sign({ userId: user._id }, config.secretKey, { expiresIn: '365d' });
-        res.cookie('session_token', token, { httpOnly: true,  maxAge: 365 * 24 * 60 * 60 * 1000 });
+        res.cookie('resell_session_token', token, { httpOnly: true,  maxAge: 365 * 24 * 60 * 60 * 1000 });
         res.json({ message: 'Authentification réussie'});
 
     } catch (error) {
@@ -52,7 +52,7 @@ router.post('/auth/register', async (req, res) => {
         await newUser.save();
 
         const token = jwt.sign({ userId: newUser._id }, config.secretKey, { expiresIn: '365d' });
-        res.cookie('session_token', token, { httpOnly: true, maxAge: 365 * 24 * 60 * 60 * 1000 }); // 365d
+        res.cookie('resell_session_token', token, { httpOnly: true, maxAge: 365 * 24 * 60 * 60 * 1000 }); // 365d
 
         res.status(201).json({ message: 'Inscription réussie' });
     } catch (error) {
@@ -62,7 +62,7 @@ router.post('/auth/register', async (req, res) => {
 
 
 router.get('/auth/validate-session', async (req, res) => {
-    const token = req.cookies['session_token'];
+    const token = req.cookies['resell_session_token'];
     if (!token) {
         return res.json({isAuthenticated: false});
     }
@@ -88,7 +88,7 @@ router.get('/auth/validate-session', async (req, res) => {
 });
 
 router.post('/auth/logout', (req, res) => {
-    res.clearCookie('session_token');
+    res.clearCookie('resell_session_token');
     res.json({ message: 'Déconnexion réussie' });
 });
 

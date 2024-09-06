@@ -12,11 +12,16 @@ const imageSchema = new mongoose.Schema({
     type: {
         type: String,
         required: true,
-        enumerable: ['image', 'icon']
+        enum: ['image', 'icon']
     },
     value: {
         type: String,
         required: true
+    },
+    system: {
+        type: String,
+        required: false,
+        default: null
     }
 });
 

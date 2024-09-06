@@ -10,7 +10,8 @@ const sizeSchema = new Schema({
     },
     sort: { // pour trier les tailles dans l'ordre
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     size: {
         type: String,

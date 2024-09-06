@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Clock, Monitor, Home, Cog } from 'lucide-react';
+import {Clock, Monitor, Home, Cog, Plus} from 'lucide-react';
 
 function NavBar({hidden}) {
     const location = useLocation();
@@ -25,6 +25,13 @@ function NavBar({hidden}) {
                               className={`menu-link ${location.pathname === '/' ? 'active' : ''}`}>
                             <Home size={24}/>
                             <span className="menu-link-span">Accueil</span>
+                        </Link>
+                    </li>
+                    <li className={`menu-item`}>
+                        <Link to={'/items/add'}
+                              className={`menu-link ${location.pathname === '/items/add' ? 'active' : ''}`}>
+                            <Plus size={24}/>
+                            <span className="menu-link-span">Ajouter item</span>
                         </Link>
                     </li>
                     <li className={`menu-item `}>

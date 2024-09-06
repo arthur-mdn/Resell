@@ -1,6 +1,7 @@
 // models/Category.js
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const Image = require('./Image');
 
 const categorySchema = new Schema({
     user: {
@@ -16,11 +17,7 @@ const categorySchema = new Schema({
     image: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image',
-        required: true,
-        default: {
-            type: 'image',
-            value: 'categories/default-category.svg'
-        }
+        required: false
     },
     parentCategory: {
         type: mongoose.Schema.Types.ObjectId,
@@ -33,6 +30,24 @@ const categorySchema = new Schema({
         required: false,
         default: []
     }]
+});
+
+categorySchema.pre('save', async function (next) {
+    if (!this.image) {
+        const defaultImage = await Image.findOne({ system: 'default-category' });
+        if (defaultImage) {
+            this.image = defaultImage._id;
+        } else {
+            const newImage = new Image({
+                type: 'image',
+                value: 'categories/default-category.svg',
+                system: 'default-category'
+            });
+            await newImage.save();
+            this.image = newImage._id;
+        }
+    }
+    next();
 });
 
 module.exports = mongoose.model('Category', categorySchema);
