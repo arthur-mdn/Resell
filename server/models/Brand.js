@@ -2,18 +2,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const brandImageSchema = new mongoose.Schema({
-    type: {
-        type: String,
-        required: true,
-        enumerable: ['image', 'icon']
-    },
-    value: {
-        type: String,
-        required: true
-    }
-});
-
 const brandSchema = new Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -26,7 +14,8 @@ const brandSchema = new Schema({
         required: true
     },
     image: {
-        type: brandImageSchema,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Image',
         required: true,
         default: {
             type: 'image',

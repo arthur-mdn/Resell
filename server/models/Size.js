@@ -8,11 +8,11 @@ const sizeSchema = new Schema({
         ref: 'Category',
         required: true
     },
-    size: {
+    sort: { // pour trier les tailles dans l'ordre
         type: Number,
         required: true
     },
-    title: {
+    size: {
         type: String,
         required: true
     }

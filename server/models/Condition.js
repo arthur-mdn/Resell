@@ -12,8 +12,13 @@ const conditionSchema = new Schema({
         required: true
     },
     image: {
-        type: String,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Image',
+        required: true,
+        default: {
+            type: 'image',
+            value: 'conditions/default-condition.svg'
+        }
     }
 });
 

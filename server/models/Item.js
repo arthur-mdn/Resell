@@ -16,6 +16,11 @@ const itemSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category',
+        required: true
+    },
     brand: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Brand',
@@ -31,17 +36,19 @@ const itemSchema = new Schema({
         ref: 'Size',
         required: true
     },
-    photos: {
-        type: Array,
+    photos: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Image',
+        required: false,
         default: []
-    },
+    }],
     creation: {
         type: Date,
         default: Date.now
     },
     status: {
         type: String,
-        enumerable: ["ok", "del", "draft"],
+        enum: ["ok", "del", "draft"],
         required: true,
         default: "ok"
     }
