@@ -1,5 +1,7 @@
 {
   "home": "Accueil",
+  "profile": "Profil",
+  "settings": "Paramètres",
   "connection": "Connexion",
   "login": "Se connecter",
   "logout": "Se déconnecter",
@@ -22,6 +24,7 @@
   "buyPrice": "Prix d'achat",
   "estimatedPrice": "Prix estimé",
   "floorPrice": "Prix plancher",
+  "add": "Ajouter",
   "addItem": "Ajouter l'article",
   "addAnItem": "Ajouter un article",
   "itemTitle": "Titre de l'article",
