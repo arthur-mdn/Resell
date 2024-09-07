@@ -3,7 +3,7 @@ import Modal from "../../Modal.jsx";
 import axios from "axios";
 import config from "../../../config.js";
 import {useLanguage} from "../../../LanguageContext.jsx";
-import {FaCheck, FaChevronRight} from "react-icons/fa";
+import {FaCheck, FaChevronRight, FaSearch} from "react-icons/fa";
 
 function BrandSelector({ onBrandSelect }) {
     const { translations } = useLanguage();
@@ -11,6 +11,7 @@ function BrandSelector({ onBrandSelect }) {
     const [isOpen, setIsOpen] = useState(false);
     const [brands, setBrands] = useState([]);
     const [selectedBrand, setSelectedBrand] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
         const fetchBrands = async () => {
@@ -30,6 +31,18 @@ function BrandSelector({ onBrandSelect }) {
         setIsOpen(false);
     };
 
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value.toLowerCase());
+    };
+
+    const filteredBrands = brands.filter(brand => {
+        return (
+            brand.name.toLowerCase().includes(searchTerm) ||
+                brand.name.replace(/ /g, "").toLowerCase().includes(searchTerm) ||
+            (brand._id ? brand._id.toLowerCase().includes(searchTerm) : false)
+        );
+    });
+
     return (
         <>
             <button type="button" onClick={() => setIsOpen(true)} className={"setting_element"}>
@@ -40,9 +53,13 @@ function BrandSelector({ onBrandSelect }) {
                 </div>
             </button>
 
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} padding={0} title="Select Brand">
-                <ul>
-                    {brands.map((brand) => (
+            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} padding={0} title="Select Brand" overflowY={"scroll"}>
+                <div className={"search-bar"}>
+                    <FaSearch/>
+                    <input type="search" placeholder={"Rechercher"} onChange={handleSearchChange}/>
+                </div>
+                <ul className={"setting_elements"}>
+                    {filteredBrands.map((brand) => (
                         <li key={brand._id} onClick={() => handleBrandSelect(brand)} className={"setting_element"}>
                             <div className={"fr g1 ai-c"}>
                                 {selectedBrand && selectedBrand._id === brand._id && <FaCheck/>}
