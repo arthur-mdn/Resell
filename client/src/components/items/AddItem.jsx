@@ -104,7 +104,6 @@ function AddItem() {
 
             </div>
 
-
             <CategorySelector onCategorySelect={(category) => setItemData({...itemData, category: category._id})}/>
             <SizeSelector categoryId={itemData.category} onSizeSelect={(size) => setItemData({...itemData, size: size._id})}/>
             <BrandSelector onBrandSelect={(brand) => setItemData({...itemData, brand: brand._id})}/>

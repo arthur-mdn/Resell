@@ -13,7 +13,6 @@ function SizeSelector({ categoryId, onSizeSelect }) {
     const [selectedSize, setSelectedSize] = useState(null);
 
     useEffect(() => {
-        console.log("categoryId", categoryId);
         if (categoryId) {
             const fetchSizes = async () => {
                 try {
@@ -38,7 +37,7 @@ function SizeSelector({ categoryId, onSizeSelect }) {
             <button type="button" onClick={() => setIsOpen(true)} className={"setting_element"}>
                 <span>{translations.size}</span>
                 <div className={"fr g0-5 ai-c"}>
-                    <span>{selectedSize ? selectedSize.size : ""}</span>
+                    <span className={"uppercase"}>{selectedSize ? selectedSize.name : ""}</span>
                     <FaChevronRight/>
                 </div>
             </button>
@@ -47,7 +46,7 @@ function SizeSelector({ categoryId, onSizeSelect }) {
                 <ul>
                     {sizes.map((size) => (
                         <li key={size._id} onClick={() => handleSizeSelect(size)} className={"setting_element"}>
-                            <div className={"fr g1 ai-c"}>
+                            <div className={"fr g1 ai-c uppercase"}>
                                 {selectedSize && selectedSize._id === size._id && <FaCheck/>}
                                 {size.name}
                             </div>

@@ -40,7 +40,6 @@ function CategorySelector({ onCategorySelect }) {
     const handleCategorySelect = (category) => {
         setTempSelectedCategory(category);
         if (category.subCategories.length > 0) {
-            // Charger les sous-catégories et changer la vue
             const subCategories = categories.filter(cat => category.subCategories.includes(cat._id));
             setParentCategory(category);
             setCurrentCategories(subCategories);

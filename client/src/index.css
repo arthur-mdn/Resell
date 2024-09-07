@@ -864,7 +864,9 @@ span.online{
   position: fixed;
   left: 0;
 }
-
+.uppercase{
+  text-transform: uppercase;
+}
 .menu {
   max-width: 75rem;
   width: 100%;
@@ -1040,4 +1042,41 @@ nav.bread {
 }
 .slider-container:has(input[type=range][disabled]){
   opacity: 0.5;
+}
+
+.item-card{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 100%;
+    cursor: pointer;
+}
+.item-card img {
+  width: 100%;
+    max-width: 35%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+.item-card-details{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .item-card{
+    flex-direction: column;
+  }
+    .item-card img {
+        max-width: 100%;
+        height: 200px;
+    }
+    .item-card-details{
+        gap: 0.25rem;
+    }
 }

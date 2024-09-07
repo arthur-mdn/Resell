@@ -35,7 +35,7 @@ function ConditionSelector({ onConditionSelect }) {
             <button type="button" onClick={() => setIsOpen(true)} className={"setting_element"}>
                 <span>{translations.condition}</span>
                 <div className={"fr g0-5 ai-c"}>
-                    <span>{selectedCondition ? selectedCondition.title : ""}</span>
+                    <span>{selectedCondition && translations.conditions && translations.conditions[selectedCondition.name] ? translations.conditions[selectedCondition.name] : ""  }</span>
                     <FaChevronRight/>
                 </div>
             </button>
@@ -46,7 +46,9 @@ function ConditionSelector({ onConditionSelect }) {
                         <li key={condition._id} onClick={() => handleConditionSelect(condition)} className={"setting_element"}>
                             <div className={"fr g1 ai-c"}>
                                 {selectedCondition && selectedCondition._id === condition._id && <FaCheck/>}
-                                {condition.title}
+                                <span>
+                                    {translations.conditions && translations.conditions[condition.name] || condition.name}
+                                </span>
                             </div>
                         </li>
                     ))}

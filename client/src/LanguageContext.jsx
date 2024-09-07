@@ -19,13 +19,15 @@ export const LanguageProvider = ({ children }) => {
             try {
                 const generalTranslations = await import(`./translations/${language}.json`);
 
-                const [categoryTranslations] = await Promise.all([
+                const [categoryTranslations, conditionTranslations] = await Promise.all([
                     import(`./translations/categories/${language}.json`),
+                    import(`./translations/conditions/${language}.json`)
                 ]);
 
                 setTranslations({
                     ...generalTranslations.default,
-                    categories: categoryTranslations.default
+                    categories: categoryTranslations.default,
+                    conditions: conditionTranslations.default
                 });
 
                 localStorage.setItem('language', language);
