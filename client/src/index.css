@@ -185,6 +185,13 @@ input[type=text], input[type=number], input[type=url], input[type=email], input[
   color-scheme: light;
 }
 
+textarea{
+    resize: vertical;
+  padding: 0.5em 1em;
+  height: 5rem;
+  min-height: 2.5rem;
+  max-height: 10rem;
+}
 input[type=checkbox]{
   background-color: white;
 }
@@ -748,21 +755,26 @@ button:focus-visible {
 }
 
 
-a.setting_element {
+.setting_element, button[type=button].setting_element{
   display: flex;
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid lightgrey;
   transition: background-color 0.3s;
   width: 100%;
   background-color: transparent;
   color: black;
-  justify-content: flex-start;
-  gap: 1.5rem
+  justify-content: space-between;
+  gap: 1.5rem;
+  border:2px solid transparent;
+  border-bottom: 1px solid lightgrey;
+  border-radius: 0;
+  cursor: pointer;
 }
-a.setting_element:hover {
+.setting_element:hover, button[type=button].setting_element:hover{
   background-color: rgba(0, 0, 0, 0.05);
   color: black;
   opacity: 1;
+  border:2px solid transparent;
+  border-bottom: 1px solid lightgrey;
 }
 
 

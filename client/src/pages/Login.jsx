@@ -4,8 +4,10 @@ import axios from 'axios';
 import { useAuth } from '../AuthContext';
 import config from '../config';
 import {useCookies} from "react-cookie";
+import {useLanguage} from "../LanguageContext";
 
 function Login() {
+    const { translations } = useLanguage();
     const { screenId } = useParams();
     const { setAuthStatus } = useAuth();
     const [email, setEmail] = useState('');
@@ -42,10 +44,10 @@ function Login() {
     return (
         <form onSubmit={handleSubmit} className={"form"} id={"login_form"}>
             <img src={"/elements/reseller.png"} style={{height:'4rem'}} alt={"DisplayHub_logo"}/>
-            <h2>Connexion</h2>
+            <h2>{translations.connection}</h2>
             {errorMessage && <div style={{color:"red",fontWeight:"bold"}}>{errorMessage}</div>}
             <div className={"input_container"}>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{translations.email}</label>
                 <input
                     id={"email"}
                     type="email"
@@ -54,7 +56,7 @@ function Login() {
                 />
             </div>
             <div className={"input_container"}>
-                <label htmlFor="password">Mot de passe</label>
+                <label htmlFor="password">{translations.password}</label>
                 <input
                     id={"password"}
                     type="password"
@@ -63,10 +65,10 @@ function Login() {
                 />
             </div>
 
-            <Link to={"/mot-de-passe-oublie"} type={"button"} className={"w100 ta-r forgot_password_button"}>Mot de passe oublié ?</Link>
-            <button type="submit" className={"w100"}>Connexion</button>
-            <p className={"w100 ta-l"}>Vous n'avez pas de compte ?</p>
-            <Link to={'/register'} className={"force_button_style sub_button"}>Créer un compte</Link>
+            <Link to={"/mot-de-passe-oublie"} type={"button"} className={"w100 ta-r forgot_password_button"}>{translations.forgotPassword}</Link>
+            <button type="submit" className={"w100"}>{translations.connection}</button>
+            <p className={"w100 ta-l"}>{translations.dontHaveAccount}</p>
+            <Link to={'/register'} className={"force_button_style sub_button"}>{translations.createAccount}</Link>
         </form>
     );
 

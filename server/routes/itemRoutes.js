@@ -20,9 +20,9 @@ router.get('/items', verifyToken, async (req, res) => {
 });
 
 router.post('/items', verifyToken, async (req, res) => {
-    const { title, description, category, brand, condition, size, photos } = req.body;
+    const { title, description, category, brand, condition, size, photos, price } = req.body;
 
-    if (!title || !description || !category || !brand || !condition || !size) {
+    if (!title || !description || !category || !brand || !condition || !size || !price.buyPrice || !price.estimatedPrice || !price.floorPrice) {
         return res.status(400).json({ error: 'All fields are required' });
     }
 
@@ -35,6 +35,7 @@ router.post('/items', verifyToken, async (req, res) => {
             brand,
             condition,
             size,
+            price,
             photos: photos || []
         });
 

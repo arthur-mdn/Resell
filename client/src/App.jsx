@@ -11,7 +11,8 @@ import Loading from "./components/Loading.jsx";
 import Register from "./pages/Register.jsx";
 import NavBar from "./components/NavBar.jsx";
 import Profil from "./pages/Profil.jsx";
-import AddItem from "./components/AddItem.jsx";
+import AddItem from "./components/items/AddItem.jsx";
+import {LanguageProvider} from "./LanguageContext";
 
 const AuthenticatedApp = () => {
     const {authStatus} = useAuth();
@@ -58,9 +59,11 @@ const AuthenticatedApp = () => {
 
 const App = () => {
     return (
-        <AuthProvider>
-            <AuthenticatedApp/>
-        </AuthProvider>
+        <LanguageProvider>
+            <AuthProvider>
+                <AuthenticatedApp/>
+            </AuthProvider>
+        </LanguageProvider>
     );
 };
 

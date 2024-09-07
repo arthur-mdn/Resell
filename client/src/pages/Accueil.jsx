@@ -27,6 +27,11 @@ function Accueil() {
                 {
                     items.map(item => (
                         <div key={item._id}>
+                            {item.photos && item.photos.length > 0 ?
+                                <img src={item.photos[0]} alt={item.title}/>
+                                :
+                                <img src="/elements/placeholder.jpg" alt={item.title}/>
+                            }
                             <h3>{item.title}</h3>
                             <p>{item.description}</p>
                         </div>

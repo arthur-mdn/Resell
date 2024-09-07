@@ -36,6 +36,20 @@ const itemSchema = new Schema({
         ref: 'Size',
         required: true
     },
+    price:{
+        buyPrice: {
+            type: Number,
+            required: true
+        },
+        estimatedPrice: {
+            type: Number,
+            required: true
+        },
+        floorPrice: {
+            type: Number,
+            required: true
+        }
+    },
     photos: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Image',
