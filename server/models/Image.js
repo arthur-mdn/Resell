@@ -27,6 +27,10 @@ const imageSchema = new mongoose.Schema({
         type: String,
         required: false,
         default: null
+    },
+    uploadedAt: {
+        type: Date,
+        default: Date.now
     }
 });
 
