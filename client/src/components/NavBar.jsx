@@ -38,7 +38,7 @@ function NavBar({hidden}) {
                     </li>
                     <li className={`menu-item `}>
                         <Link to={'/profil'}
-                              className={`menu-link ${isActive(location.pathname, '/settings') ? 'active' : ''}`}>
+                              className={`menu-link ${isActive(location.pathname, '/profil') ? 'active' : ''}`}>
                             <Cog size={24}/>
                             <span className="menu-link-span">{translations.settings}</span>
                         </Link>
