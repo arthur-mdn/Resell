@@ -1,0 +1,40 @@
+services:
+  Resell-mongodb:
+    image: mongo
+    volumes:
+      - Resell_mongodb_data:/data/db
+
+  Resell-client:
+    build:
+      context: ./client
+      args:
+        VITE_INSTANCE_URL: "https://client.charmify.site"
+        VITE_SERVER_URL: "https://api.charmify.site"
+    image: resell-client
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.Resell-client.rule=Host(`client.charmify.site`)"
+      - "traefik.http.routers.Resell-client.entrypoints=websecure"
+      - "traefik.http.routers.Resell-client.tls.certresolver=myresolver"
+
+  Resell-server:
+    build:
+      context: ./server
+    env_file: ./server/.env
+    environment:
+      DB_URI: mongodb://Resell-mongodb:27017/Resell
+    image: resell-server
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.Resell-server.rule=Host(`api.charmify.site`)"
+      - "traefik.http.services.Resell-server.loadbalancer.server.port=3001"
+      - "traefik.http.routers.Resell-server.entrypoints=websecure"
+      - "traefik.http.routers.Resell-server.tls.certresolver=myresolver"
+    volumes:
+      - uploads_volume:/app/upload
+
+volumes:
+  Resell_mongodb_data:
+    driver: local
+  uploads_volume:
+    driver: local
