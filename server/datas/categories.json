@@ -1,0 +1,369 @@
+{
+  "clothes": {
+    "user": null,
+    "name": "clothes",
+    "subCategories": [
+      {
+        "user": null,
+        "name": "tshirt",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "short-sleeve"
+          },
+          {
+            "user": null,
+            "name": "long-sleeve"
+          },
+          {
+            "user": null,
+            "name": "sleeveless"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "jacket",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "blazer"
+          },
+          {
+            "user": null,
+            "name": "bomber"
+          },
+          {
+            "user": null,
+            "name": "coat"
+          },
+          {
+            "user": null,
+            "name": "leather"
+          },
+          {
+            "user": null,
+            "name": "denim"
+          },
+          {
+            "user": null,
+            "name": "parka"
+          },
+          {
+            "user": null,
+            "name": "raincoat"
+          },
+          {
+            "user": null,
+            "name": "vest"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "trousers",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "jeans"
+          },
+          {
+            "user": null,
+            "name": "chino"
+          },
+          {
+            "user": null,
+            "name": "jogging"
+          },
+          {
+            "user": null,
+            "name": "shorts"
+          },
+          {
+            "user": null,
+            "name": "suit"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "dress",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "short"
+          },
+          {
+            "user": null,
+            "name": "long"
+          },
+          {
+            "user": null,
+            "name": "cocktail"
+          },
+          {
+            "user": null,
+            "name": "evening"
+          },
+          {
+            "user": null,
+            "name": "summer"
+          },
+          {
+            "user": null,
+            "name": "wedding"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "skirt"
+      },
+      {
+        "user": null,
+        "name": "sweater",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "pullover"
+          },
+          {
+            "user": null,
+            "name": "cardigan"
+          },
+          {
+            "user": null,
+            "name": "turtleneck"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "coat"
+
+      },
+      {
+        "user": null,
+        "name": "shirt",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "short-sleeve"
+          },
+          {
+            "user": null,
+            "name": "long-sleeve"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "underwear",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "bra"
+          },
+          {
+            "user": null,
+            "name": "panties"
+          },
+          {
+            "user": null,
+            "name": "boxer"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "swimsuit",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "one-piece"
+          },
+          {
+            "user": null,
+            "name": "two-piece"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "pyjamas"
+      },
+      {
+        "user": null,
+        "name": "lingerie",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "nightie"
+          },
+          {
+            "user": null,
+            "name": "babydoll"
+          }
+        ]
+      }
+    ],
+    "image": "category-clothes"
+  },
+  "accessories": {
+    "user": null,
+    "name": "accessories",
+    "subCategories": [
+      {
+        "user": null,
+        "name": "bag",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "handbag"
+          },
+          {
+            "user": null,
+            "name": "shoulder bag"
+          },
+          {
+            "user": null,
+            "name": "backpack"
+          },
+          {
+            "user": null,
+            "name": "clutch"
+          },
+          {
+            "user": null,
+            "name": "tote"
+          },
+          {
+            "user": null,
+            "name": "crossbody"
+          },
+          {
+            "user": null,
+            "name": "satchel"
+          },
+          {
+            "user": null,
+            "name": "messenger"
+          },
+          {
+            "user": null,
+            "name": "pouch"
+          },
+          {
+            "user": null,
+            "name": "wallet"
+          },
+          {
+            "user": null,
+            "name": "purse"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "hat",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "cap"
+          },
+          {
+            "user": null,
+            "name": "beanie"
+          },
+          {
+            "user": null,
+            "name": "beret"
+          },
+          {
+            "user": null,
+            "name": "bowler"
+          },
+
+          {
+            "user": null,
+            "name": "top hat"
+          },
+          {
+            "user": null,
+            "name": "visor"
+          },
+          {
+            "user": null,
+            "name": "sombrero"
+          }
+        ]
+      },
+      {
+        "user": null,
+        "name": "scarf"
+
+      },
+      {
+        "user": null,
+        "name": "gloves",
+        "subCategories": [
+          {
+            "user": null,
+            "name": "mittens"
+          },
+          {
+            "user": null,
+            "name": "fingerless"
+          }
+        ]
+      }
+    ],
+    "image": "category-accessories"
+  },
+  "jewelry": {
+    "user": null,
+    "name": "jewelry",
+    "subCategories": [
+      {
+        "user": null,
+        "name": "necklace"
+      },
+      {
+        "user": null,
+        "name": "bracelet"
+      },
+      {
+        "user": null,
+        "name": "ring"
+      },
+      {
+        "user": null,
+        "name": "earrings"
+      }
+    ],
+    "image": "category-jewelry"
+  },
+  "shoes": {
+    "user": null,
+    "name": "shoes",
+    "subCategories": [
+      {
+        "user": null,
+        "name": "sneakers"
+      },
+      {
+        "user": null,
+        "name": "boots"
+      },
+      {
+        "user": null,
+        "name": "sandals"
+      },
+      {
+        "user": null,
+        "name": "slippers"
+      }
+    ],
+    "image": "category-shoes"
+  }
+}

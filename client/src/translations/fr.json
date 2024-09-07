@@ -26,6 +26,8 @@
   "addAnItem": "Ajouter un article",
   "itemTitle": "Titre de l'article",
   "itemDescription": "Description de l'article",
-  "itemPrice": "Prix de l'article"
+  "itemPrice": "Prix de l'article",
+  "confirm": "Confirmer",
+  "back": "Retour"
 
 }

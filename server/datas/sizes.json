@@ -1,0 +1,117 @@
+{
+  "size-unique": {
+    "category": null,
+    "sort": 0,
+    "name": "unique"
+  },
+  "size-xxs": {
+    "category": "clothes",
+    "sort": 1,
+    "name": "xxs"
+  },
+  "size-xs": {
+    "category": "clothes",
+    "sort": 2,
+    "name": "xs"
+  },
+  "size-s": {
+    "category": "clothes",
+    "sort": 3,
+    "name": "s"
+  },
+  "size-m": {
+    "category": "clothes",
+    "sort": 4,
+    "name": "m"
+  },
+  "size-l": {
+    "category": "clothes",
+    "sort": 5,
+    "name": "l"
+  },
+  "size-xl": {
+    "category": "clothes",
+    "sort": 6,
+    "name": "xl"
+  },
+  "size-xxl": {
+    "category": "clothes",
+    "sort": 7,
+    "name": "xxl"
+  },
+  "size-xxxl": {
+    "category": "clothes",
+    "sort": 8,
+    "name": "xxxl"
+  },
+  "size-36": {
+    "category": "shoes",
+    "sort": 1,
+    "name": "36"
+  },
+  "size-37": {
+    "category": "shoes",
+    "sort": 2,
+    "name": "37"
+  },
+  "size-38": {
+    "category": "shoes",
+    "sort": 3,
+    "name": "38"
+  },
+  "size-39": {
+    "category": "shoes",
+    "sort": 4,
+    "name": "39"
+  },
+  "size-40": {
+    "category": "shoes",
+    "sort": 5,
+    "name": "40"
+  },
+  "size-41": {
+    "category": "shoes",
+    "sort": 6,
+    "name": "41"
+  },
+  "size-42": {
+    "category": "shoes",
+    "sort": 7,
+    "name": "42"
+  },
+  "size-43": {
+    "category": "shoes",
+    "sort": 8,
+    "name": "43"
+  },
+  "size-44": {
+    "category": "shoes",
+    "sort": 9,
+    "name": "44"
+  },
+  "size-45": {
+    "category": "shoes",
+    "sort": 10,
+    "name": "45"
+  },
+  "size-46": {
+    "category": "shoes",
+    "sort": 11,
+    "name": "46"
+  },
+  "size-47": {
+    "category": "shoes",
+    "sort": 12,
+    "name": "47"
+  },
+  "size-48": {
+    "category": "shoes",
+    "sort": 13,
+    "name": "48"
+  },
+  "size-49": {
+    "category": "shoes",
+    "sort": 14,
+    "name": "49"
+  }
+}

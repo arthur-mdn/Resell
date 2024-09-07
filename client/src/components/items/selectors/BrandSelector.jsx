@@ -46,7 +46,7 @@ function BrandSelector({ onBrandSelect }) {
                         <li key={brand._id} onClick={() => handleBrandSelect(brand)} className={"setting_element"}>
                             <div className={"fr g1 ai-c"}>
                                 {selectedBrand && selectedBrand._id === brand._id && <FaCheck/>}
-                                {brand.name}
+                                <span>{brand.name}</span>
                             </div>
                         </li>
                     ))}

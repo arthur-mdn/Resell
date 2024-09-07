@@ -18,6 +18,11 @@ const imageSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    where: {
+        type: String,
+        required: true,
+        default: "server"
+    },
     system: {
         type: String,
         required: false,

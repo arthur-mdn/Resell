@@ -13,6 +13,7 @@ const itemRoutes = require('./routes/itemRoutes');
 const config = require('./others/config');
 const database = require('./others/database');
 const verifyToken = require("./others/verifyToken");
+const initDatabase = require("./others/initDatabase");
 
 const app = express();
 const server = http.createServer(app);
@@ -38,6 +39,7 @@ app.use(cookieParser({
 }));
 
 database.connect();
+initDatabase();
 
 app.use(authRoutes);
 app.use(itemRoutes);

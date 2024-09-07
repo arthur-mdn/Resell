@@ -1,0 +1,52 @@
+{
+  "condition-10": {
+    "condition": 10,
+    "title": "new-with-tags",
+    "image": "condition-10"
+  },
+  "condition-9": {
+    "condition": 9,
+    "title": "new-without-tags",
+    "image": "condition-9"
+  },
+  "condition-8": {
+    "condition": 8,
+    "title": "like-new",
+    "image": "condition-8"
+  },
+  "condition-7": {
+    "condition": 7,
+    "title": "excellent",
+    "image": "condition-7"
+  },
+  "condition-6": {
+    "condition": 6,
+    "title": "very-good",
+    "image": "condition-6"
+  },
+  "condition-5": {
+    "condition": 5,
+    "title": "good",
+    "image": "condition-5"
+  },
+  "condition-4": {
+    "condition": 4,
+    "title": "fair",
+    "image": "condition-4"
+  },
+  "condition-3": {
+    "condition": 3,
+    "title": "poor",
+    "image": "condition-3"
+  },
+  "condition-2": {
+    "condition": 2,
+    "title": "very-poor",
+    "image": "condition-2"
+  },
+  "condition-1": {
+    "condition": 1,
+    "title": "unusable",
+    "image": "condition-1"
+  }
+}

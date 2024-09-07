@@ -777,8 +777,10 @@ button:focus-visible {
   border-bottom: 1px solid lightgrey;
 }
 
-
-
+.setting_element[disabled], button[type=button].setting_element[disabled]{
+    opacity: 0.2;
+    cursor: not-allowed;
+}
 
 
 .Toastify{

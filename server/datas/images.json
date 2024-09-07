@@ -1,0 +1,93 @@
+{
+  "default-category" : {
+    "user": null,
+    "type": "image",
+    "where": "client",
+    "value": "categories/default-category.svg",
+    "system": "default-category"
+  },
+  "default-brand" : {
+    "user": null,
+    "type": "image",
+    "where": "client",
+    "value": "brands/default-brand.svg",
+    "system": "default-brand"
+  },
+  "default-condition" : {
+    "user": null,
+    "type": "image",
+    "where": "client",
+    "value": "conditions/default-condition.svg",
+    "system": "default-condition"
+  },
+  "condition-10" : {
+    "user": null,
+    "type": "image",
+    "where": "client",
+    "value": "conditions/condition-10.svg",
+    "system": "condition-10"
+  },
+    "condition-9" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-9.svg",
+        "system": "condition-9"
+    },
+    "condition-8" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-8.svg",
+        "system": "condition-8"
+    },
+    "condition-7" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-7.svg",
+        "system": "condition-7"
+    },
+    "condition-6" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-6.svg",
+        "system": "condition-6"
+    },
+    "condition-5" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-5.svg",
+        "system": "condition-5"
+    },
+    "condition-4" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-4.svg",
+        "system": "condition-4"
+    },
+    "condition-3" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-3.svg",
+        "system": "condition-3"
+    },
+    "condition-2" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-2.svg",
+        "system": "condition-2"
+    },
+    "condition-1" : {
+        "user": null,
+        "type": "image",
+        "where": "client",
+        "value": "conditions/condition-1.svg",
+        "system": "condition-1"
+    }
+}

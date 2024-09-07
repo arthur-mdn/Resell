@@ -6,14 +6,15 @@ const sizeSchema = new Schema({
     category: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
-        required: true
+        required: false,
+        default: null
     },
     sort: { // Used to order sizes in the UI
         type: Number,
         required: true,
         default: 0
     },
-    size: {
+    name: {
         type: String,
         required: true
     }

@@ -13,6 +13,7 @@ function SizeSelector({ categoryId, onSizeSelect }) {
     const [selectedSize, setSelectedSize] = useState(null);
 
     useEffect(() => {
+        console.log("categoryId", categoryId);
         if (categoryId) {
             const fetchSizes = async () => {
                 try {
@@ -48,7 +49,7 @@ function SizeSelector({ categoryId, onSizeSelect }) {
                         <li key={size._id} onClick={() => handleSizeSelect(size)} className={"setting_element"}>
                             <div className={"fr g1 ai-c"}>
                                 {selectedSize && selectedSize._id === size._id && <FaCheck/>}
-                                {size.size}
+                                {size.name}
                             </div>
                         </li>
                     ))}

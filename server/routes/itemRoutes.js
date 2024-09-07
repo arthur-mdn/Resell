@@ -56,8 +56,16 @@ router.get('/items/categories', async (req, res) => {
 });
 router.get('/items/sizes/:category', async (req, res) => {
     try {
-        const category = await Category.findById(req.params.category);
-        const sizes = await Size.find({ category: category._id });
+        let category = await Category.findById(req.params.category);
+        let sizes = await Size.find({ category: category._id });
+        while (sizes.length === 0 && category.parentCategory) {
+            category = await Category.findById(category.parentCategory);
+            sizes = await Size.find({ category: category._id });
+        }
+
+        if (sizes.length === 0) {
+            sizes = await Size.find({ category: null });
+        }
 
         res.json(sizes);
     } catch (error) {

@@ -1,0 +1,342 @@
+{
+  "lacoste": {
+    "name": "Lacoste",
+    "user": null,
+    "image": "lacoste"
+  },
+  "nike": {
+    "name": "Nike",
+    "user": null,
+    "image": "nike"
+  },
+  "adidas": {
+    "name": "Adidas",
+    "user": null,
+    "image": "adidas"
+  },
+  "puma": {
+    "name": "Puma",
+    "user": null,
+    "image": "puma"
+  },
+  "reebok": {
+    "name": "Reebok",
+    "user": null,
+    "image": "reebok"
+  },
+  "converse": {
+    "name": "Converse",
+    "user": null,
+    "image": "converse"
+  },
+  "vans": {
+    "name": "Vans",
+    "user": null,
+    "image": "vans"
+  },
+  "newbalance": {
+    "name": "New Balance",
+    "user": null,
+    "image": "new-balance"
+  },
+  "asics": {
+    "name": "Asics",
+    "user": null,
+    "image": "asics"
+  },
+  "fila": {
+    "name": "Fila",
+    "user": null,
+    "image": "fila"
+  },
+  "underarmour": {
+    "name": "Under Armour",
+    "user": null,
+    "image": "under-armour"
+  },
+  "jordan": {
+    "name": "Jordan",
+    "user": null,
+    "image": "jordan"
+  },
+  "timberland": {
+    "name": "Timberland",
+    "user": null,
+    "image": "timberland"
+  },
+  "drmartens": {
+    "name": "Dr Martens",
+    "user": null,
+    "image": "dr-martens"
+  },
+  "clarks": {
+    "name": "Clarks",
+    "user": null,
+    "image": "clarks"
+  },
+  "birkenstock": {
+    "name": "Birkenstock",
+    "user": null,
+    "image": "birkenstock"
+  },
+  "skechers": {
+    "name": "Skechers",
+    "user": null,
+    "image": "skechers"
+  },
+  "salomon": {
+    "name": "Salomon",
+    "user": null,
+    "image": "salomon"
+  },
+  "ralphlauren": {
+    "name": "Ralph Lauren",
+    "user": null,
+    "image": "ralph-lauren"
+  },
+  "tommyhilfiger": {
+    "name": "Tommy Hilfiger",
+    "user": null,
+    "image": "tommy-hilfiger"
+  },
+  "guess": {
+    "name": "Guess",
+    "user": null,
+    "image": "guess"
+  },
+  "calvinklein": {
+    "name": "Calvin Klein",
+    "user": null,
+    "image": "calvin-klein"
+  },
+  "michaelkors": {
+    "name": "Michael Kors",
+    "user": null,
+    "image": "michael-kors"
+  },
+  "supreme": {
+    "name": "Supreme",
+    "user": null,
+    "image": "supreme"
+  },
+  "offwhite": {
+    "name": "Off White",
+    "user": null,
+    "image": "off-white"
+  },
+  "balenciaga": {
+    "name": "Balenciaga",
+    "user": null,
+    "image": "balenciaga"
+  },
+  "gucci": {
+    "name": "Gucci",
+    "user": null,
+    "image": "gucci"
+  },
+  "louisvuitton": {
+    "name": "Louis Vuitton",
+    "user": null,
+    "image": "louis-vuitton"
+  },
+  "chanel": {
+    "name": "Channel",
+    "user": null,
+    "image": "chanel"
+  },
+  "hermes": {
+    "name": "Hermes",
+    "user": null,
+    "image": "hermes"
+  },
+  "dior": {
+    "name": "Dior",
+    "user": null,
+    "image": "dior"
+  },
+  "prada": {
+    "name": "Prada",
+    "user": null,
+    "image": "prada"
+  },
+  "versace": {
+    "name": "Versace",
+    "user": null,
+    "image": "versace"
+  },
+  "fendi": {
+    "name": "Fendi",
+    "user": null,
+    "image": "fendi"
+  },
+  "burberry": {
+    "name": "Burberry",
+    "user": null,
+    "image": "burberry"
+  },
+  "valentino": {
+    "name": "Valentino",
+    "user": null,
+    "image": "valentino"
+  },
+  "dolcegabbana": {
+    "name": "Dolce & Gabbana",
+    "user": null,
+    "image": "dolce-gabbana"
+  },
+  "givenchy": {
+    "name": "Givenchy",
+    "user": null,
+    "image": "givenchy"
+  },
+  "alexandermcqueen": {
+    "name": "Alexander McQueen",
+    "user": null,
+    "image": "alexander-mcqueen"
+  },
+  "balmain": {
+    "name": "Balmain",
+    "user": null,
+    "image": "balmain"
+  },
+  "moncler": {
+    "name": "Moncler",
+    "user": null,
+    "image": "moncler"
+  },
+  "stoneisland": {
+    "name": "Stone Island",
+    "user": null,
+    "image": "stone-island"
+  },
+  "kenzo": {
+    "name": "Kenzo",
+    "user": null,
+    "image": "kenzo"
+  },
+  "kiabi": {
+    "name": "Kiabi",
+    "user": null,
+    "image": "kiabi"
+  },
+  "zara": {
+    "name": "Zara",
+    "user": null,
+    "image": "zara"
+  },
+  "hm": {
+    "name": "H&M",
+    "user": null,
+    "image": "hm"
+  },
+  "mango": {
+    "name": "Mango",
+    "user": null,
+    "image": "mango"
+  },
+  "bershka": {
+    "name": "Bershka",
+    "user": null,
+    "image": "bershka"
+  },
+  "pullbear": {
+    "name": "Pull & Bear",
+    "user": null,
+    "image": "pull-bear"
+  },
+  "stradivarius": {
+    "name": "Stradivarius",
+    "user": null,
+    "image": "stradivarius"
+  },
+  "massimodutti": {
+    "name": "Massimo Dutti",
+    "user": null,
+    "image": "massimo-dutti"
+  },
+  "desigual": {
+    "name": "Desigual",
+    "user": null,
+    "image": "desigual"
+  },
+  "maje": {
+    "name": "Maje",
+    "user": null,
+    "image": "maje"
+  },
+  "sandro": {
+    "name": "Sandro",
+    "user": null,
+    "image": "sandro"
+  },
+  "levis": {
+    "name": "Levi's",
+    "user": null,
+    "image": "levis"
+  },
+  "gstar": {
+    "name": "G-Star",
+    "user": null,
+    "image": "g-star"
+  },
+  "diesel": {
+    "name": "Diesel",
+    "user": null,
+    "image": "diesel"
+  },
+  "calzedonia": {
+    "name": "Calzedonia",
+    "user": null,
+    "image": "calzedonia"
+  },
+  "undiz": {
+    "name": "Undiz",
+    "user": null,
+    "image": "undiz"
+  },
+  "etam": {
+    "name": "Etam",
+    "user": null,
+    "image": "etam"
+  },
+  "gemo": {
+    "name": "Gemo",
+    "user": null,
+    "image": "gemo"
+  },
+  "celio": {
+    "name": "Celio",
+    "user": null,
+    "image": "celio"
+  },
+  "jules": {
+    "name": "Jules",
+    "user": null,
+    "image": "jules"
+  },
+  "carhartt": {
+    "name": "Carhartt",
+    "user": null,
+    "image": "carhartt"
+  },
+  "patagonia": {
+    "name": "Patagonia",
+    "user": null,
+    "image": "patagonia"
+  },
+  "napapijri": {
+    "name": "Napapijri",
+    "user": null,
+    "image": "napapijri"
+  },
+  "thenorthface": {
+    "name": "The North Face",
+    "user": null,
+    "image": "the-north-face"
+  },
+  "columbia": {
+    "name": "Columbia",
+    "user": null,
+    "image": "columbia"
+  }
+}
