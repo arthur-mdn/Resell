@@ -1,0 +1,13 @@
+{
+  "name": "MyResell",
+  "short_name": "MyResell",
+  "start_url": "https://charmify.site/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/elements/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

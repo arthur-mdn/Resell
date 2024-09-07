@@ -36,7 +36,7 @@ function Register() {
 
     return (
         <form onSubmit={handleSubmit} className={"form"} id={"login_form"}>
-            <img src={"/elements/reseller.png"} style={{height:'4rem'}} alt={"DisplayHub_logo"}/>
+            <img src={"/elements/logos/my-resell-logo.svg"} style={{height:'4rem'}} alt={"MyResell_logo"}/>
             <h2>Inscription</h2>
             {errorMessage && <div style={{color:"red",fontWeight:"bold"}}>{errorMessage}</div>}
             <div className={"input_container"}>
