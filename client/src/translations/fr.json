@@ -28,6 +28,6 @@
   "itemDescription": "Description de l'article",
   "itemPrice": "Prix de l'article",
   "confirm": "Confirmer",
-  "back": "Retour"
-
+  "back": "Retour",
+  "noSizes": "Sélectionnez une catégorie pour voir les tailles disponibles."
 }

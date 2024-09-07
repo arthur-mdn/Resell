@@ -9,11 +9,11 @@ function CategorySelector({ onCategorySelect }) {
     const { translations } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [categories, setCategories] = useState([]);
-    const [selectedCategory, setSelectedCategory] = useState(null); // Sélection confirmée
-    const [tempSelectedCategory, setTempSelectedCategory] = useState(null); // Sélection temporaire
-    const [currentCategories, setCurrentCategories] = useState([]);  // Catégories actuellement affichées
-    const [parentCategory, setParentCategory] = useState(null);      // Parent de la catégorie actuelle
-    const [isNavigating, setIsNavigating] = useState(false); // Pour suivre si l'utilisateur navigue dans les sous-catégories
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [tempSelectedCategory, setTempSelectedCategory] = useState(null);
+    const [currentCategories, setCurrentCategories] = useState([]);
+    const [parentCategory, setParentCategory] = useState(null);
+    const [isNavigating, setIsNavigating] = useState(false);
 
     useEffect(() => {
         const fetchCategories = async () => {
@@ -29,35 +29,32 @@ function CategorySelector({ onCategorySelect }) {
 
     const openModal = () => {
         if (!isNavigating) {
-            // Si on n'est pas en train de naviguer, réinitialiser la vue sur les catégories de premier niveau
             const topLevelCategories = categories.filter(category => category.parentCategory === null);
             setCurrentCategories(topLevelCategories);
-            setParentCategory(null); // Revenir à la racine
+            setParentCategory(null);
         }
-        setTempSelectedCategory(selectedCategory); // Réinitialiser la sélection temporaire à la dernière catégorie confirmée
+        setTempSelectedCategory(selectedCategory);
         setIsOpen(true);
     };
 
     const handleCategorySelect = (category) => {
-        setTempSelectedCategory(category); // Mettre à jour la sélection temporaire dès que l'on sélectionne une catégorie
+        setTempSelectedCategory(category);
         if (category.subCategories.length > 0) {
             // Charger les sous-catégories et changer la vue
             const subCategories = categories.filter(cat => category.subCategories.includes(cat._id));
-            setParentCategory(category);  // Garder la trace du parent pour revenir en arrière
+            setParentCategory(category);
             setCurrentCategories(subCategories);
-            setIsNavigating(true); // Indiquer que l'utilisateur navigue dans les sous-catégories
+            setIsNavigating(true);
         }
     };
 
     const handleBack = () => {
         if (parentCategory && parentCategory.parentCategory === null) {
-            // Si on est au premier niveau, afficher les catégories de premier niveau
             const topLevelCategories = categories.filter(category => category.parentCategory === null);
             setCurrentCategories(topLevelCategories);
-            setParentCategory(null); // On revient au niveau racine
-            setIsNavigating(false); // Indiquer qu'on est de retour au niveau de base
+            setParentCategory(null);
+            setIsNavigating(false);
         } else if (parentCategory) {
-            // Si on est dans une sous-catégorie, remonter d'un niveau
             const grandParent = categories.find(category => category._id === parentCategory.parentCategory);
             const parentSubCategories = categories.filter(cat => grandParent.subCategories.includes(cat._id));
             setCurrentCategories(parentSubCategories);
@@ -66,13 +63,12 @@ function CategorySelector({ onCategorySelect }) {
     };
 
     const handleConfirm = () => {
-        setSelectedCategory(tempSelectedCategory); // Confirmer la sélection temporaire
-        onCategorySelect(tempSelectedCategory);    // Envoyer la catégorie sélectionnée au parent
+        setSelectedCategory(tempSelectedCategory);
+        onCategorySelect(tempSelectedCategory);
         setIsOpen(false);
     };
 
     const handleClose = () => {
-        // Conserver la navigation en réinitialisant seulement la sélection temporaire à la dernière sélection confirmée
         setTempSelectedCategory(selectedCategory);
         setIsOpen(false);
     };
@@ -82,20 +78,18 @@ function CategorySelector({ onCategorySelect }) {
             <button type="button" onClick={openModal} className={"setting_element"}>
                 <span>{translations.category}</span>
                 <div className={"fr g0-5 ai-c"}>
-                    <span>{selectedCategory ? selectedCategory.name : ""}</span>
+                    <span>{(selectedCategory && translations.categories && translations.categories[selectedCategory.name]) ? translations.categories[selectedCategory.name] : ""}</span>
                     <FaChevronRight />
                 </div>
             </button>
 
             <Modal isOpen={isOpen} onClose={handleClose} padding={0} title={translations.selectCategory}>
                 <ul>
-
-                        <button type="button" onClick={parentCategory ? handleBack : null} disabled={!parentCategory} className={"setting_element"}>
-                            <div className={"fr g1 ai-c"}>
-                                <FaChevronLeft /> {translations.back}
-                            </div>
-                        </button>
-
+                    <button type="button" onClick={parentCategory ? handleBack : null} disabled={!parentCategory} className={"setting_element"}>
+                        <div className={"fr g1 ai-c"}>
+                            <FaChevronLeft /> {translations.back}
+                        </div>
+                    </button>
 
                     {currentCategories.map((category) => (
                         <li key={category._id} onClick={() => handleCategorySelect(category)} className={"setting_element"}>
@@ -103,11 +97,12 @@ function CategorySelector({ onCategorySelect }) {
                             <div className={"fr g1 jc-sb w100 ai-c"}>
                                 <div className={"fr g1 ai-c"}>
                                     {tempSelectedCategory && tempSelectedCategory._id === category._id && <FaCheck />}
-                                    <span>{category.name}</span>
+                                    <span>
+                                        {translations.categories && translations.categories[category.name] || category.name}
+                                    </span>
                                 </div>
                                 {category.subCategories && category.subCategories.length > 0 && <FaChevronRight />}
                             </div>
-
                         </li>
                     ))}
                 </ul>

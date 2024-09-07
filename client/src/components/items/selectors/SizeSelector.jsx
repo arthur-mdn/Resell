@@ -53,6 +53,7 @@ function SizeSelector({ categoryId, onSizeSelect }) {
                             </div>
                         </li>
                     ))}
+                    {sizes.length === 0 && <li>{translations.noSizes}</li>}
                 </ul>
             </Modal>
         </>

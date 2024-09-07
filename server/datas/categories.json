@@ -9,15 +9,15 @@
         "subCategories": [
           {
             "user": null,
-            "name": "short-sleeve"
+            "name": "tshirt-short-sleeve"
           },
           {
             "user": null,
-            "name": "long-sleeve"
+            "name": "tshirt-long-sleeve"
           },
           {
             "user": null,
-            "name": "sleeveless"
+            "name": "tshirt-sleeveless"
           }
         ]
       },
@@ -99,18 +99,6 @@
           },
           {
             "user": null,
-            "name": "cocktail"
-          },
-          {
-            "user": null,
-            "name": "evening"
-          },
-          {
-            "user": null,
-            "name": "summer"
-          },
-          {
-            "user": null,
             "name": "wedding"
           }
         ]
@@ -133,14 +121,13 @@
           },
           {
             "user": null,
+            "name": "hoodie"
+          },
+          {
+            "user": null,
             "name": "turtleneck"
           }
         ]
-      },
-      {
-        "user": null,
-        "name": "coat"
-
       },
       {
         "user": null,
@@ -148,11 +135,11 @@
         "subCategories": [
           {
             "user": null,
-            "name": "short-sleeve"
+            "name": "shirt-short-sleeve"
           },
           {
             "user": null,
-            "name": "long-sleeve"
+            "name": "shirt-long-sleeve"
           }
         ]
       },
@@ -171,6 +158,26 @@
           {
             "user": null,
             "name": "boxer"
+          },
+          {
+            "user": null,
+            "name": "briefs"
+          },
+          {
+            "user": null,
+            "name": "thong"
+          },
+          {
+            "user": null,
+            "name": "socks"
+          },
+          {
+            "user": null,
+            "name": "tights"
+          },
+          {
+            "user": null,
+            "name": "undershirt"
           }
         ]
       },
@@ -190,10 +197,6 @@
       },
       {
         "user": null,
-        "name": "pyjamas"
-      },
-      {
-        "user": null,
         "name": "lingerie",
         "subCategories": [
           {
@@ -203,6 +206,14 @@
           {
             "user": null,
             "name": "babydoll"
+          },
+          {
+            "user": null,
+            "name": "pyjama"
+          },
+          {
+            "user": null,
+            "name": "bodysuit"
           }
         ]
       }
@@ -223,7 +234,7 @@
           },
           {
             "user": null,
-            "name": "shoulder bag"
+            "name": "shoulder-bag"
           },
           {
             "user": null,
@@ -239,27 +250,19 @@
           },
           {
             "user": null,
-            "name": "crossbody"
-          },
-          {
-            "user": null,
-            "name": "satchel"
-          },
-          {
-            "user": null,
             "name": "messenger"
           },
           {
             "user": null,
-            "name": "pouch"
+            "name": "luggage"
+          },
+          {
+            "user": null,
+            "name": "suitcase"
           },
           {
             "user": null,
             "name": "wallet"
-          },
-          {
-            "user": null,
-            "name": "purse"
           }
         ]
       },
@@ -283,10 +286,9 @@
             "user": null,
             "name": "bowler"
           },
-
           {
             "user": null,
-            "name": "top hat"
+            "name": "top-hat"
           },
           {
             "user": null,
@@ -301,7 +303,6 @@
       {
         "user": null,
         "name": "scarf"
-
       },
       {
         "user": null,
@@ -362,6 +363,34 @@
       {
         "user": null,
         "name": "slippers"
+      },
+      {
+        "user": null,
+        "name": "pumps"
+      },
+      {
+        "user": null,
+        "name": "moccasins"
+      },
+      {
+        "user": null,
+        "name": "flip-flops"
+      },
+      {
+        "user": null,
+        "name": "ankle-boots"
+      },
+      {
+        "user": null,
+        "name": "ballerinas"
+      },
+      {
+        "user": null,
+        "name": "clogs"
+      },
+      {
+        "user": null,
+        "name": "espadrilles"
       }
     ],
     "image": "category-shoes"
