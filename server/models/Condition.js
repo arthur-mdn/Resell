@@ -8,7 +8,7 @@ const conditionSchema = new Schema({
         type: Number,
         required: true
     },
-    title: {
+    name: {
         type: String,
         required: true
     },

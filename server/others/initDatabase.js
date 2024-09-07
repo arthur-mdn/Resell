@@ -133,18 +133,18 @@ async function initConditions() {
     try {
         const conditionList = Object.values(conditions);
         for (const condition of conditionList) {
-            const existingCondition = await Condition.findOne({ title: condition.title });
+            const existingCondition = await Condition.findOne({ name: condition.name });
             if (!existingCondition) {
                 const conditionData = {
                     condition: condition.condition,
-                    title: condition.title,
+                    name: condition.name,
                     image: imageIds[condition.image] || imageIds['default-condition']
                 };
                 const newCondition = new Condition(conditionData);
                 await newCondition.save();
-                console.log(`Condition ${condition.title} inserted.`);
+                console.log(`Condition ${condition.name} inserted.`);
             } else {
-                console.log(`Condition ${condition.title} already exists.`);
+                console.log(`Condition ${condition.name} already exists.`);
             }
         }
         console.log("Condition initialization complete.");

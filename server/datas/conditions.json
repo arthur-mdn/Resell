@@ -1,52 +1,52 @@
 {
-  "condition-10": {
-    "condition": 10,
-    "title": "new-with-tags",
-    "image": "condition-10"
+  "new-with-tags": {
+    "name": "new-with-tags",
+    "condition": "10",
+    "image": "new-with-tags"
   },
-  "condition-9": {
-    "condition": 9,
-    "title": "new-without-tags",
-    "image": "condition-9"
+  "new-without-tags": {
+    "name": "new-without-tags",
+    "condition": "9",
+    "image": "new-without-tags"
   },
-  "condition-8": {
-    "condition": 8,
-    "title": "like-new",
-    "image": "condition-8"
+  "new-with-defects": {
+    "name": "new-with-defects",
+    "condition": "8",
+    "image": "new-with-defects"
   },
-  "condition-7": {
-    "condition": 7,
-    "title": "excellent",
-    "image": "condition-7"
+  "like-new": {
+    "name": "like-new",
+    "condition": "7",
+    "image": "like-new"
   },
-  "condition-6": {
-    "condition": 6,
-    "title": "very-good",
-    "image": "condition-6"
+  "excellent": {
+    "name": "excellent",
+    "condition": "6",
+    "image": "excellent"
   },
-  "condition-5": {
-    "condition": 5,
-    "title": "good",
-    "image": "condition-5"
+  "very-good": {
+    "name": "very-good",
+    "condition": "5",
+    "image": "very-good"
   },
-  "condition-4": {
-    "condition": 4,
-    "title": "fair",
-    "image": "condition-4"
+  "good": {
+    "name": "good",
+    "condition": "4",
+    "image": "good"
   },
-  "condition-3": {
-    "condition": 3,
-    "title": "poor",
-    "image": "condition-3"
+  "fair": {
+    "name": "fair",
+    "condition": "3",
+    "image": "fair"
   },
-  "condition-2": {
-    "condition": 2,
-    "title": "very-poor",
-    "image": "condition-2"
+  "used": {
+    "name": "used",
+    "condition": "2",
+    "image": "used"
   },
-  "condition-1": {
-    "condition": 1,
-    "title": "unusable",
-    "image": "condition-1"
+  "poor": {
+    "name": "poor",
+    "condition": "1",
+    "image": "poor"
   }
 }
