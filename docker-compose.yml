@@ -7,9 +7,8 @@ services:
   Resell-client:
     build:
       context: ./client
-      args:
-        VITE_INSTANCE_URL: "https://charmify.site"
-        VITE_SERVER_URL: "https://api.charmify.site"
+    env_file:
+      - ./client/.env
     image: resell-client
     labels:
       - "traefik.enable=true"
@@ -21,8 +20,6 @@ services:
     build:
       context: ./server
     env_file: ./server/.env
-    environment:
-      DB_URI: mongodb://Resell-mongodb:27017/Resell
     image: resell-server
     labels:
       - "traefik.enable=true"
