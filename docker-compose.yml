@@ -8,12 +8,12 @@ services:
     build:
       context: ./client
       args:
-        VITE_INSTANCE_URL: "https://client.charmify.site"
+        VITE_INSTANCE_URL: "https://charmify.site"
         VITE_SERVER_URL: "https://api.charmify.site"
     image: resell-client
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.Resell-client.rule=Host(`client.charmify.site`)"
+      - "traefik.http.routers.Resell-client.rule=Host(`charmify.site`)"
       - "traefik.http.routers.Resell-client.entrypoints=websecure"
       - "traefik.http.routers.Resell-client.tls.certresolver=myresolver"
 
