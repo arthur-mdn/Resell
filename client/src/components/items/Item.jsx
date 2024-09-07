@@ -1,4 +1,5 @@
 import {useLanguage} from "../../LanguageContext.jsx";
+import config from "../../config";
 
 function Item({item}) {
     const { translations } = useLanguage();
@@ -9,7 +10,7 @@ function Item({item}) {
                      <span>{translations.conditions && translations.conditions[item.condition.name] || item.condition.name}</span>
                </div>
                {item.photos && item.photos.length > 0 ?
-                   <img src={item.photos[0]} alt={item.title}/>
+                   <img src={`${item.photos[0].where === "server" ? config.serverUrl : ""}/${item.photos[0].value}`} alt={item.title}/>
                    :
                    <img src="/elements/placeholder.jpg" alt={item.title}/>
                }

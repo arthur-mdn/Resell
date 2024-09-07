@@ -3,10 +3,34 @@ const Brand = require("../models/Brand");
 const Condition = require("../models/Condition");
 const Size = require("../models/Size");
 const Item = require("../models/Item");
+const Image = require("../models/Image");
 
 const verifyToken = require('../others/verifyToken');
 const express = require("express");
+const multer = require("multer");
+const path = require("path");
 const router = express.Router();
+
+const imageFilter = (req, file, cb) => {
+    if (!file.mimetype.startsWith('image/')) {
+        return cb(new Error('Seuls les fichiers image sont autorisés!'), false);
+    }
+    cb(null, true);
+};
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '-' + Math.random().toString(36).substring(2,6+2) + path.extname(file.originalname));
+    }
+});
+
+const upload = multer({
+    storage: storage,
+    fileFilter: imageFilter
+});
 
 router.get('/items', verifyToken, async (req, res) => {
     try {
@@ -19,11 +43,32 @@ router.get('/items', verifyToken, async (req, res) => {
     }
 });
 
-router.post('/items', verifyToken, async (req, res) => {
-    const { title, description, category, brand, condition, size, photos, price } = req.body;
+router.post('/items', verifyToken, upload.fields([
+    { name: 'photos' }
+]), async (req, res) => {
+    let { title, description, category, brand, condition, size, price } = req.body;
 
-    if (!title || !description || !category || !brand || !condition || !size || !price.buyPrice || !price.estimatedPrice || !price.floorPrice) {
+    if (!title || !description || !category || !brand || !condition || !size || !price) {
         return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    price = JSON.parse(price);
+    if (!price.buyPrice || !price.estimatedPrice || !price.floorPrice) {
+        return res.status(400).json({ error: 'All price fields are required' });
+    }
+
+    let photos = [];
+    if (req.files && req.files.photos) {
+        for (const file of req.files.photos) {
+            const newImage = new Image({
+                user: req.user.userId,
+                type: 'image',
+                value: file.path,
+                where: 'server'
+            });
+            await newImage.save();
+            photos.push(newImage._id);
+        }
     }
 
     try {
@@ -36,7 +81,7 @@ router.post('/items', verifyToken, async (req, res) => {
             condition,
             size,
             price,
-            photos: photos || []
+            photos
         });
 
         await newItem.save();
