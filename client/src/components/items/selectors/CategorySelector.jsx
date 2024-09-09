@@ -5,7 +5,7 @@ import config from "../../../config.js";
 import { useLanguage } from "../../../LanguageContext.jsx";
 import { FaCheck, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-function CategorySelector({ onCategorySelect }) {
+function CategorySelector({ onCategorySelect, initialCategory }) {
     const { translations } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [categories, setCategories] = useState([]);
@@ -26,6 +26,14 @@ function CategorySelector({ onCategorySelect }) {
         };
         fetchCategories();
     }, []);
+
+    useEffect(() => {
+        if (initialCategory) {
+            const selectedCat = categories.find(cat => cat._id === initialCategory);
+            setSelectedCategory(selectedCat);
+            setTempSelectedCategory(selectedCat);
+        }
+    }, [initialCategory, categories]);
 
     const openModal = () => {
         if (!isNavigating) {

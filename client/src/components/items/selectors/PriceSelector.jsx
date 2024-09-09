@@ -5,7 +5,7 @@ import config from "../../../config.js";
 import {useLanguage} from "../../../LanguageContext.jsx";
 import {FaChevronRight} from "react-icons/fa";
 
-function PriceSelector({ onPriceSelect }) {
+function PriceSelector({ onPriceSelect, initialPrice }) {
     const { translations } = useLanguage();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +17,14 @@ function PriceSelector({ onPriceSelect }) {
         onPriceSelect({ buyPrice, estimatedPrice, floorPrice });
         setIsOpen(false);
     };
+
+    useEffect(() => {
+        if (initialPrice) {
+            setBuyPrice(initialPrice.buyPrice);
+            setEstimatedPrice(initialPrice.estimatedPrice);
+            setFloorPrice(initialPrice.floorPrice);
+        }
+    }, [initialPrice]);
 
     return (
         <>

@@ -7,7 +7,8 @@ import axios from "axios";
 import config from "../../config";
 import {useLanguage} from "../../LanguageContext.jsx";
 import PriceSelector from "./selectors/PriceSelector.jsx";
-import Item from "./Item.jsx";
+import Item from "./ItemCard.jsx";
+import ItemCard from "./ItemCard.jsx";
 
 function ItemList() {
     const { translations } = useLanguage();
@@ -32,9 +33,12 @@ function ItemList() {
        <>
            {
                items.map(item => (
-                   <Item item={item} key={item._id}/>
+                    <a href={`/item/${item._id}/view`} key={item._id}>
+                        <ItemCard item={item} key={item._id}/>
+                    </a>
                ))
            }
+           {items.length === 0 && <p>{translations.noItems}</p>}
        </>
     );
 }

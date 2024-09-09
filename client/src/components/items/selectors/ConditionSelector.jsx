@@ -5,7 +5,7 @@ import config from "../../../config.js";
 import {useLanguage} from "../../../LanguageContext.jsx";
 import {FaCheck, FaChevronRight} from "react-icons/fa";
 
-function ConditionSelector({ onConditionSelect }) {
+function ConditionSelector({ onConditionSelect, initialCondition }) {
     const { translations } = useLanguage();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +23,13 @@ function ConditionSelector({ onConditionSelect }) {
         };
         fetchConditions();
     }, []);
+
+    useEffect(() => {
+        if (initialCondition) {
+            const selectedCondition = conditions.find(condition => condition._id === initialCondition);
+            setSelectedCondition(selectedCondition);
+        }
+    }, [initialCondition, conditions]);
 
     const handleConditionSelect = (condition) => {
         setSelectedCondition(condition);

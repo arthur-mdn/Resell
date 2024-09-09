@@ -5,7 +5,7 @@ import config from "../../../config.js";
 import {useLanguage} from "../../../LanguageContext.jsx";
 import {FaCheck, FaChevronRight} from "react-icons/fa";
 
-function SizeSelector({ categoryId, onSizeSelect }) {
+function SizeSelector({ categoryId, onSizeSelect, initialSize }) {
     const { translations } = useLanguage();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +25,13 @@ function SizeSelector({ categoryId, onSizeSelect }) {
             fetchSizes();
         }
     }, [categoryId]);
+
+    useEffect(() => {
+        if (initialSize) {
+            const selectedSize = sizes.find(size => size._id === initialSize);
+            setSelectedSize(selectedSize);
+        }
+    }, [initialSize, sizes]);
 
     const handleSizeSelect = (size) => {
         setSelectedSize(size);

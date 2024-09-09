@@ -5,7 +5,7 @@ import config from "../../../config.js";
 import {useLanguage} from "../../../LanguageContext.jsx";
 import {FaCheck, FaChevronRight, FaSearch} from "react-icons/fa";
 
-function BrandSelector({ onBrandSelect }) {
+function BrandSelector({ onBrandSelect, initialBrand }) {
     const { translations } = useLanguage();
 
     const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +24,13 @@ function BrandSelector({ onBrandSelect }) {
         };
         fetchBrands();
     }, []);
+
+    useEffect(() => {
+        if (initialBrand) {
+            const selectedBrand = brands.find(brand => brand._id === initialBrand);
+            setSelectedBrand(selectedBrand);
+        }
+    }, [initialBrand, brands]);
 
     const handleBrandSelect = (brand) => {
         setSelectedBrand(brand);

@@ -43,6 +43,86 @@ router.get('/items', verifyToken, async (req, res) => {
     }
 });
 
+router.get('/item/:id', verifyToken, async (req, res) => {
+    try {
+        const item = await Item.findById(req.params.id).populate('category').populate('brand').populate('condition').populate('size').populate('photos');
+        res.json(item);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
+router.post('/item/:id', verifyToken, upload.fields([
+    { name: 'photos' }
+]), async (req, res) => {
+    let { title, description, category, brand, condition, size, price, photosToDelete, existingPhotos } = req.body;
+
+    if (!title || !description || !category || !brand || !condition || !size || !price) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    price = JSON.parse(price);
+    if (!price.buyPrice || !price.estimatedPrice || !price.floorPrice) {
+        return res.status(400).json({ error: 'All price fields are required' });
+    }
+
+    let photos = [];
+
+    if (req.files && req.files.photos) {
+        for (const file of req.files.photos) {
+            const newImage = new Image({
+                user: req.user.userId,
+                type: 'image',
+                value: file.path,
+                where: 'server'
+            });
+            await newImage.save();
+            photos.push(newImage._id);
+        }
+    }
+
+    if (existingPhotos) {
+        existingPhotos = JSON.parse(existingPhotos);
+        for (const photo of existingPhotos) {
+            const image = await Image.findById(photo);
+            if (image && image.user.toString() === req.user.userId) {
+                photos.push(image._id);
+            } else {
+                return res.status(400).json({ error: 'You can only use your own images' });
+            }
+        }
+    }
+
+    if (photosToDelete) {
+        const deletePhotoIds = JSON.parse(photosToDelete);
+        for (const photoId of deletePhotoIds) {
+            const image = await Image.findById(photoId);
+            if (image && image.user.toString() === req.user.userId) {
+                await Image.findByIdAndDelete(photoId);
+            } else {
+                return res.status(400).json({ error: 'You can only delete your own images' });
+            }
+        }
+    }
+
+    try {
+        const item = await Item.findById(req.params.id);
+        item.title = title;
+        item.description = description;
+        item.category = category;
+        item.brand = brand;
+        item.condition = condition;
+        item.size = size;
+        item.price = price;
+        item.photos = photos;
+
+        await item.save();
+        res.json(item);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+
 router.post('/items', verifyToken, upload.fields([
     { name: 'photos' }
 ]), async (req, res) => {

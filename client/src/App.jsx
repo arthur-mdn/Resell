@@ -13,6 +13,8 @@ import NavBar from "./components/NavBar.jsx";
 import Profil from "./pages/Profil.jsx";
 import AddItem from "./components/items/AddItem.jsx";
 import {LanguageProvider} from "./LanguageContext";
+import ItemCard from "./components/items/ItemCard.jsx";
+import Item from "./components/items/Item.jsx";
 
 const AuthenticatedApp = () => {
     const {authStatus} = useAuth();
@@ -25,7 +27,7 @@ const AuthenticatedApp = () => {
                 <>
                     <NavBar hidden={authStatus === "unauthenticated"}/>
                     <ToastContainer pauseOnFocusLoss={false} closeOnClick={true}/>
-                    <div className={`fc w100 h100 content ${authStatus === "unauthenticated" ? "logged-out" : ""}`}>
+                    <div className={`fc w100 h100 ofy-s content ${authStatus === "unauthenticated" ? "logged-out" : ""}`}>
                         <Routes>
                             {authStatus === "unauthenticated" ? (
                                 <>
@@ -39,6 +41,8 @@ const AuthenticatedApp = () => {
                                     {/* Routes privées */}
                                     <Route path="/" element={<Accueil/>}/>
                                     <Route path="/items/add" element={<AddItem/>}/>
+                                    <Route path="/item/:id/edit" element={<AddItem/>}/>
+                                    <Route path="/item/:id/view" element={<Item/>}/>
                                     <Route path="/profil" element={<Profil/>}/>
                                     <Route path="/logout" element={<Logout/>}/>
                                 </>
