@@ -20,7 +20,7 @@ function NavBar({hidden}) {
             <nav className="navbar">
                 <ul className="menu">
                     <li className={"fc ai-c hide-mobile"}>
-                        <img src={"/elements/logo-only.svg"} className="logo"/>
+                        <img src={"/elements/favicon.png"} className="logo"/>
                     </li>
                     <li className={`menu-item`}>
                         <Link to={'/'}
